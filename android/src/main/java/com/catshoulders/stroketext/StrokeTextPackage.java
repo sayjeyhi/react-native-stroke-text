@@ -1,4 +1,4 @@
-package com.stroketext;
+package com.catshoulders.stroketext;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -20,3 +20,4 @@ public class StrokeTextPackage implements ReactPackage {
     return Arrays.<ViewManager>asList(new StrokeTextViewManager());
   }
 }
+

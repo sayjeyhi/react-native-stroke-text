@@ -1,10 +1,10 @@
 {
-  "name": "@charmy.tech/react-native-stroke-text",
-  "version": "1.2.3",
+  "name": "@catshoulders/react-native-stroke-text",
+  "version": "1.2.11",
+  "author": "Cat Shoulders",
   "description": "React Native Stroke/Outline Text",
   "main": "build/index.js",
   "source": "./src/",
-  "author": "Charmy Inc. (https://github.com/charmy)",
   "license": "MIT",
   "homepage": "https://github.com/charmy/react-native-stroke-text#readme",
   "repository": "https://github.com/charmy/react-native-stroke-text",
@@ -28,5 +28,8 @@
     "@types/react-native": "^0.71.3",
     "prettier": "^2.8.5",
     "typescript": "^5.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

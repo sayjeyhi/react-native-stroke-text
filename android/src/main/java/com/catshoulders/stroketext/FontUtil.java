@@ -1,4 +1,4 @@
-package com.stroketext;
+package com.catshoulders.stroketext;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -14,7 +14,8 @@ public class FontUtil {
         if (typeface == null) {
             typeface = getFontFromReactFontManager(context, fontFamily);
         }
-        return typeface;
+        // Always return a valid typeface, fallback to DEFAULT if null
+        return typeface != null ? typeface : Typeface.DEFAULT;
     }
 
     private static Typeface getFontFromAssets(Context context, String fontFamily) {
@@ -32,9 +33,11 @@ public class FontUtil {
     private static String findFontFile(Context context, String folderPath, String fontName) {
         try {
             String[] files = context.getAssets().list(folderPath);
-            for (String file : files) {
-                if (file.startsWith(fontName) && (file.endsWith(".ttf") || file.endsWith(".otf"))) {
-                    return folderPath + file;
+            if (files != null) {
+                for (String file : files) {
+                    if (file.startsWith(fontName) && (file.endsWith(".ttf") || file.endsWith(".otf"))) {
+                        return folderPath + file;
+                    }
                 }
             }
         } catch (IOException e) {
@@ -43,3 +46,4 @@ public class FontUtil {
         return null;
     }
 }
+
